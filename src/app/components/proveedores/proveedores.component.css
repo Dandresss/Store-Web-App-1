@@ -1,0 +1,85 @@
+.listado-proveedores {
+  margin-top: 20px;
+}
+
+.tabla-proveedores {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-proveedores th,
+.tabla-proveedores td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.tabla-proveedores th {
+  background-color: #f2f2f2;
+}
+
+.proveedor:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.boton-agregarprov {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.boton-agregarprov:hover {
+  background-color: #45a049;
+}
+
+.boton-eliminar {
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.boton-eliminar:hover {
+  background-color: #d32f2f;
+}
+
+.boton-actualizarprov {
+  padding: 8px 16px;
+  background-color: #ffeb3b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.boton-actualizarprov:hover {
+  background-color: #fbc02d;
+}
+
+.buscador-proveedores {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.buscador-proveedores:focus {
+  outline: none;
+  border-color: #4caf50; /* Cambia el color del borde cuando el input está enfocado */
+}
+
+.buscador-proveedores::placeholder {
+  color: #aaa; /* Color del texto de marcador de posición */
+}

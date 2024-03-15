@@ -1,0 +1,19 @@
+<app-navigation-bar *ngIf="true"></app-navigation-bar>
+<form class="formulario-agregar" (ngSubmit)="agregarSalidaInv()">
+  <div class="campo-formulario">
+      <label for="producto">Producto:</label>
+      <select id="producto" name="producto" [(ngModel)]="nuevaSalidaInv.producto" required>
+            <option *ngFor="let producto of productos" [value]="producto.id">{{ producto.nombre }}</option>
+          </select>
+    </div>
+  <div class="campo-formulario">
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" name="fecha" [(ngModel)]="nuevaSalidaInv.fecha" required>
+  </div>
+  <div class="campo-formulario">
+    <label for="cantidad_vendida">Cantidad vendida:</label>
+    <input type="number" id="cantidad_vendida" name="cantidad_vendida" [(ngModel)]="nuevaSalidaInv.cantidad_vendida" required>
+  </div>
+  
+  <button type="submit" class="boton-agregar">Agregar Venta</button>
+</form>

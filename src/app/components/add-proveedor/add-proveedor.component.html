@@ -1,0 +1,13 @@
+<app-navigation-bar *ngIf="true"></app-navigation-bar>
+<form class="formulario-agregar" (ngSubmit)="agregarProveedor()">
+  <div class="campo-formulario">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" [(ngModel)]="nuevoProveedor.nombre" required>
+  </div>
+  <div class="campo-formulario">
+    <label for="contacto">Contacto:</label>
+    <input type="text" id="contacto" name="contacto" [(ngModel)]="nuevoProveedor.contacto" required>
+  </div>
+  <!-- Otros campos del formulario -->
+  <button type="submit" class="boton-agregar">Agregar Proveedor</button>
+</form>

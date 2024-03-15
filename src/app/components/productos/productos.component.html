@@ -1,0 +1,37 @@
+<app-navigation-bar *ngIf="true"></app-navigation-bar>
+<div class="listado-productos">
+  <input type="text" placeholder="Ingrese el nombre del producto..." [(ngModel)]="terminoBusqueda" (input)="buscarProductos()" class="buscador-productos">
+  <table *ngIf="productosFiltrados && productosFiltrados.length > 0" class="tabla-productos">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Cantidad Disponible</th>
+        <th>Precio Unitario</th>
+        <th>Proveedor</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of productosFiltrados; let i = index" class="producto">
+        <td>{{ i + 1 }}</td>
+        <td>{{ producto.nombre }}</td>
+        <td>{{ producto.descripcion }}</td>
+        <td>{{ producto.cantidad_disponible }}</td>
+        <td>{{ producto.precio_unitario }}</td>
+        <td>{{ getNombreProveedor(producto.proveedor) }}</td>
+        <td>
+          <button (click)="eliminarProducto(producto.id)" class="boton-eliminar">Eliminar</button>
+          <button [routerLink]="['/actualizarprod', producto.id]" class="boton-actualizarprod">Actualizar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="productosFiltrados && productosFiltrados.length === 0" class="mensaje-vacio">
+    No se encontraron productos.
+  </div>
+  <div>
+    <button routerLink="/agregarprod" class="boton-agregarprod">Añadir</button>
+  </div>
+</div>

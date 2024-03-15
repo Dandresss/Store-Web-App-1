@@ -1,0 +1,34 @@
+.navbar {
+    background-color: #333; /* Color de fondo de la barra de navegación */
+    overflow: hidden; /* Para contener elementos flotantes */
+  }
+  
+  .navbar-list {
+    list-style-type: none; /* Eliminar los puntos de la lista */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Para utilizar el modelo de caja flexible */
+    justify-content: flex-end; /* Alinea los elementos hacia la derecha */
+  }
+  
+  .navbar-item {
+    margin-left: 10px; /* Agregar espacio entre los elementos */
+  }
+  
+  .navbar-link {
+    display: block;
+    color: white; /* Color del texto */
+    text-align: center;
+    padding: 14px 20px; /* Espaciado interior */
+    text-decoration: none; /* Eliminar subrayado de los enlaces */
+  }
+  
+  .navbar-link:hover {
+    background-color: #555; /* Cambio de color al pasar el cursor sobre el enlace */
+  }
+  
+  .active {
+    background-color: #555; /* Cambia el fondo de la pestaña activa */
+    border-bottom: 2px solid #fff; /* Agrega una línea inferior */
+  }
+  

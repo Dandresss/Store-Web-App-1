@@ -1,0 +1,39 @@
+<app-navigation-bar *ngIf="true"></app-navigation-bar>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title">Actualizar Producto</h2>
+      <div *ngIf="producto">
+        <form (submit)="actualizarProducto()">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="producto.nombre" name="nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="descripcion">Descripcion:</label>
+            <input type="text" class="form-control" id="descripcion" [(ngModel)]="producto.descripcion" name="descripcion" required>
+          </div>
+          <div class="form-group">
+            <label for="cantidad_disponible">Cantidad disponible:</label>
+            <input type="number" class="form-control" id="cantidad_disponible" [(ngModel)]="producto.cantidad_disponible" name="cantidad_disponible" required>
+          </div>
+          <div class="form-group">
+            <label for="precio_unitario">Precio unitario:</label>
+            <input type="number" class="form-control" id="precio_unitario" [(ngModel)]="producto.precio_unitario" name="precio_unitario" required>
+          </div>
+
+          <div class="form-group">
+            <label for="proveedor">Proveedor:</label>
+            <select id="proveedor" name="proveedor" [(ngModel)]="producto.proveedor" class="form-control" required>
+              <option *ngFor="let proveedor of proveedores" [value]="proveedor.id">{{ proveedor.nombre }}</option>
+            </select>
+          </div>
+          <div class="btn-group">
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+            <button type="button" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

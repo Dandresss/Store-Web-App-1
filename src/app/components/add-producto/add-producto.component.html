@@ -1,0 +1,26 @@
+<app-navigation-bar *ngIf="true"></app-navigation-bar>
+<form class="formulario-agregar" (ngSubmit)="agregarProducto()">
+  <div class="campo-formulario">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" [(ngModel)]="nuevoProducto.nombre" required>
+  </div>
+  <div class="campo-formulario">
+    <label for="descripcion">Descripción:</label>
+    <input type="text" id="descripcion" name="descripcion" [(ngModel)]="nuevoProducto.descripcion" required>
+  </div>
+  <div class="campo-formulario">
+    <label for="cantidad_disponible">Cantidad disponible:</label>
+    <input type="number" id="cantidad_disponible" name="cantidad_disponible" [(ngModel)]="nuevoProducto.cantidad_disponible" required>
+  </div>
+  <div class="campo-formulario">
+    <label for="precio_unitario">Precio Unitario:</label>
+    <input type="number" id="precio_unitario" name="precio_unitario" [(ngModel)]="nuevoProducto.precio_unitario" required>
+  </div>
+  <div class="campo-formulario">
+    <label for="proveedor">Proveedor:</label>
+    <select id="proveedor" name="proveedor" [(ngModel)]="nuevoProducto.proveedor" required>
+      <option *ngFor="let proveedor of proveedores" [value]="proveedor.id">{{ proveedor.nombre }}</option>
+    </select>
+  </div>
+  <button type="submit" class="boton-agregar">Agregar Producto</button>
+</form>

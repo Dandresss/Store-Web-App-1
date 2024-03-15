@@ -1,0 +1,31 @@
+<app-navigation-bar *ngIf="true"></app-navigation-bar>
+<div class="listado-proveedores">
+  <input type="text" placeholder="Ingrese el nombre del proveedor..." [(ngModel)]="terminoBusqueda" (input)="buscarProveedores()" class="buscador-proveedores">
+  <table *ngIf="proveedoresFiltrados && proveedoresFiltrados.length > 0" class="tabla-proveedores">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Proveedor</th>
+        <th>Contacto</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let proveedor of proveedoresFiltrados; let i = index" class="proveedor">
+        <td>{{ i + 1 }}</td>
+        <td>{{ proveedor.nombre }}</td>
+        <td>{{ proveedor.contacto }}</td>
+        <td>
+          <button (click)="eliminarProveedor(proveedor.id)" class="boton-eliminar">Eliminar</button>
+          <button [routerLink]="['/actualizarprov', proveedor.id]" class="boton-actualizarprov">Actualizar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="proveedoresFiltrados && proveedoresFiltrados.length === 0" class="mensaje-vacio">
+    No se encontraron proveedores.
+  </div>
+  <div>
+    <button routerLink="/agregarprov" class="boton-agregarprov">Añadir</button>
+  </div>
+</div>

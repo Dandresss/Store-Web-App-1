@@ -1,0 +1,67 @@
+.container {
+    margin-top: 20px;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    padding: 20px;
+    text-align: left; /* Alineación del contenido del formulario a la izquierda */
+  }
+  
+  .card-title {
+    text-align: center; /* Centrar el título */
+    margin-bottom: 20px; /* Espacio inferior para separar del formulario */
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+  }
+  
+  .btn-group {
+    text-align: center; /* Centrar los botones */
+  }
+  
+  .btn {
+    margin: 0 5px;
+    border-radius: 20px;
+    padding: 10px 20px;
+  }
+  
+  .btn-primary {
+    background-color: #28a745;
+    border: none;
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #218838;
+  }
+  
+  .btn-secondary {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #c82333;
+  }
+  

@@ -1,0 +1,30 @@
+<app-navigation-bar *ngIf="true"></app-navigation-bar>
+<div class="listado-entradas-inventario">
+    <input type="text" placeholder="Ingrese el nombre de la entrada..." [(ngModel)]="terminoBusqueda" (input)="buscarEntradasInv()" class="buscador-productos">
+    <table *ngIf="entradasinvFiltradas && entradasinvFiltradas.length > 0" class="tabla-productos">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Producto</th>
+                <th>Fecha</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let entradainv of entradasinvFiltradas; let i = index" class="producto">
+                <td>{{ i + 1 }}</td>
+                <td>{{ getNombreProducto(entradainv.producto) }}</td>
+                <td>{{ entradainv.fecha }}</td>
+                <td>{{ entradainv.cantidad_recibida }}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div *ngIf="entradasinvFiltradas && entradasinvFiltradas.length === 0" class="mensaje-vacio">
+      No se encontraron entradas de inventario.
+    </div>
+    
+    <div>
+        <button routerLink="/agregarentradainv" class="boton-agregarprod">Añadir</button>
+    </div>
+  </div>

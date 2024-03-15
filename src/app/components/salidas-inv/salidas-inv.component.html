@@ -1,0 +1,26 @@
+<app-navigation-bar *ngIf="true"></app-navigation-bar>
+<div class="listado-salidas-inventario">
+    <input type="text" placeholder="Ingrese el nombre de la salida..." [(ngModel)]="terminoBusqueda" (input)="buscarSalidaInv()" class="buscador-productos">
+  <table *ngIf="salidasinv && salidasinv.length > 0" class="tabla-productos">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Producto</th>
+        <th>Fecha</th>
+        <th>Cantidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let salidainv of salidasinvFiltradas; let i = index" class="producto">
+        <td>{{ i + 1 }}</td>
+        <td>{{ getNombreProducto(salidainv.producto) }}</td>
+        <td>{{ salidainv.fecha }}</td>
+        <td>{{ salidainv.cantidad_vendida }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div>
+    <button routerLink="/agregarsalidainv" class="boton-agregarprod">Añadir</button>
+  </div>
+</div>
